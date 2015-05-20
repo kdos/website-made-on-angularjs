@@ -1,0 +1,120 @@
+<!--header-->
+<nav>
+    <div class="nav-wrapper">
+        <ul id="slide-out" class="side-nav">
+            <li><a href="#!">First Sidebar Link</a></li>
+            <li><a href="#!">Second Sidebar Link</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+        <a href="#" class="brand-logo"><img src="Logo.png" width="120"></a>
+        <ul id="nav-mobile" class="right">
+            <li>
+                <a href="#"><img src="work/marker-5.png">Bangkok</a>
+            </li>
+            <li class="hide-on-med-and-down">
+                Login/Signup
+            </li>
+        </ul>
+    </div>
+    <!--
+        <div class="nav-wrapper">
+        <ul id="slide-out" class="side-nav full">
+            <li><a href="#!">First Sidebar Link</a></li>
+            <li><a href="#!">Second Sidebar Link</a></li>
+        </ul>
+
+        <a href="#" data-activates="slide-out" class="button-collapse">
+            <i class="large mdi-navigation-menu"></i>
+        </a>
+        
+            <a href="#" class="brand-logo"><img src="Logo.png"></a>
+        </div>
+        <ul id="nav-mobile" class="right">
+        <li><a href="#"><img src="work/marker-50.png">Bangkok</a></li>
+      </ul>-->
+</nav>
+<!--landing page-->
+<section class="section section__page1">
+    <div class="row">
+        <h1>Bangkok</h1>
+        <p>Activities, experiences & memories</p>
+    </div>
+    <div class="col s12 page1__menu" id="slide">
+        <ul class="tabs">
+            <li class="tab col s2">
+                <a class="active" href="#"><img src="icons/star.ico" width="25vh">
+                    <p>Best in Bangkok</p>
+                </a>
+            </li>
+            <li class="tab col s2">
+                <a href="#"><img src="icons/jump.ico" width="25vh">
+                    <p>Adventure</p>
+                </a>
+            </li>
+            <li class="tab col s2">
+                <a href="#"><img src="icons/time.ico" width="25vh">
+                    <p>History</p>
+                </a>
+            </li>
+            <li class="tab col s2">
+                <a href="#"><img src="icons/home.ico" width="25vh">
+                    <p>Culture</p>
+                </a>
+            </li>
+            <li class="tab col s2">
+                <a href="#"><img src="icons/binoc.ico" width="25vh">
+                    <p>Sightseeing</p>
+                </a>
+            </li>
+            <li class="tab col s2">
+                <a href="#"><img src="icons/cup.ico" width="25vh">
+                    <p>Nightlife</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<div class="container portfolio">
+    <div class="row">
+        <div class="col s12 m12 l12 portfolio-holder">
+            <div class="col s4 portfolio__card" ng-repeat="nm in names">
+                <div class="dud">
+                    <div class="portfolio__head">
+                        <p>{{nm.name}}</p>
+                    </div>
+                    <div class="portfolio__foot">
+                        <img src="icons/calender.ico" class="portfolio__foot__img">
+                        <p class="portfolio__foot__price">${{nm.price}}</p>
+                        <div class="portfolio__foot__slot"><b>Next Available:</b><br>date</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="waves-effect waves-light btn-large">See all the Best Activities in Bangkok</a>
+</div>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
