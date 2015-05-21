@@ -1,120 +1,116 @@
-<!--header-->
-<nav>
-    <div class="nav-wrapper">
-        <ul id="slide-out" class="side-nav">
-            <li><a href="#!">First Sidebar Link</a></li>
-            <li><a href="#!">Second Sidebar Link</a></li>
-        </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
-        <a href="#" class="brand-logo"><img src="Logo.png" width="120"></a>
-        <ul id="nav-mobile" class="right">
-            <li>
-                <a href="#"><img src="work/marker-5.png">Bangkok</a>
-            </li>
-            <li class="hide-on-med-and-down">
-                Login/Signup
-            </li>
-        </ul>
+<!-- Loading animation-->
+<div id="preloader" ng-show="isLoading">
+    <div id="status">
     </div>
-    <!--
+</div>
+<!-- Main page-->
+<div class="content_site">
+    <!--header-->
+    <nav>
         <div class="nav-wrapper">
-        <ul id="slide-out" class="side-nav full">
-            <li><a href="#!">First Sidebar Link</a></li>
-            <li><a href="#!">Second Sidebar Link</a></li>
-        </ul>
-
-        <a href="#" data-activates="slide-out" class="button-collapse">
-            <i class="large mdi-navigation-menu"></i>
-        </a>
-        
-            <a href="#" class="brand-logo"><img src="Logo.png"></a>
+            <ul id="slide-out" class="side-nav">
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">Second Sidebar Link</a></li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+            <a href="#" class="brand-logo"><img src="Logo.png" width="160"></a>
+            <ul id="nav-mobile" class="right">
+                <li>
+                    <a href="#"><img src="work/marker-5.png">Bangkok</a>
+                </li>
+                <li class="hide-on-med-and-down">
+                    Login/Signup
+                </li>
+            </ul>
         </div>
-        <ul id="nav-mobile" class="right">
-        <li><a href="#"><img src="work/marker-50.png">Bangkok</a></li>
-      </ul>-->
-</nav>
-<!--landing page-->
-<section class="section section__page1">
-    <div class="row">
-        <h1>Bangkok</h1>
-        <p>Activities, experiences & memories</p>
-    </div>
-    <div class="col s12 page1__menu" id="slide">
-        <ul class="tabs">
-            <li class="tab col s2">
-                <a class="active" href="#"><img src="icons/star.ico" width="25vh">
-                    <p>Best in Bangkok</p>
-                </a>
-            </li>
-            <li class="tab col s2">
-                <a href="#"><img src="icons/jump.ico" width="25vh">
-                    <p>Adventure</p>
-                </a>
-            </li>
-            <li class="tab col s2">
-                <a href="#"><img src="icons/time.ico" width="25vh">
-                    <p>History</p>
-                </a>
-            </li>
-            <li class="tab col s2">
-                <a href="#"><img src="icons/home.ico" width="25vh">
-                    <p>Culture</p>
-                </a>
-            </li>
-            <li class="tab col s2">
-                <a href="#"><img src="icons/binoc.ico" width="25vh">
-                    <p>Sightseeing</p>
-                </a>
-            </li>
-            <li class="tab col s2">
-                <a href="#"><img src="icons/cup.ico" width="25vh">
-                    <p>Nightlife</p>
-                </a>
-            </li>
-        </ul>
-    </div>
-</section>
-<div class="container portfolio">
-    <div class="row">
-        <div class="col s12 m12 l12 portfolio-holder">
-            <div class="col s4 portfolio__card" ng-repeat="nm in names">
-                <div class="dud">
-                    <div class="portfolio__head">
-                        <p>{{nm.name}}</p>
-                    </div>
-                    <div class="portfolio__foot">
-                        <img src="icons/calender.ico" class="portfolio__foot__img">
-                        <p class="portfolio__foot__price">${{nm.price}}</p>
-                        <div class="portfolio__foot__slot"><b>Next Available:</b><br>date</div>
+    </nav>
+    <!--landing page-->
+    <section class="section section__page1">
+        <div class="row">
+            <h1 class="white-text center-align">Bangkok</h1>
+            <p class="white-text center-align">Activities, experiences & memories</p>
+        </div>
+        <div class="col s12 page1__menu" id="slide">
+            <ul class="tabs z-depth-2">
+                <li class="tab col s2">
+                    <a class="active" href="#"><img src="work/star-50.png" width="25vh">
+                        <p>Best in Bangkok</p>
+                    </a>
+                </li>
+                <li class="tab col s2">
+                    <a href="#"><img src="work/base_jumping-50.png" width="25vh">
+                        <p>Adventure</p>
+                    </a>
+                </li>
+                <li class="tab col s2">
+                    <a href="#"><img src="work/historical-50.png" width="25vh">
+                        <p>History</p>
+                    </a>
+                </li>
+                <li class="tab col s2">
+                    <a href="#"><img src="icons/home.ico" width="25vh">
+                        <p>Culture</p>
+                    </a>
+                </li>
+                <li class="tab col s2">
+                    <a href="#"><img src="work/binoculars-50.png" width="25vh">
+                        <p>Sightseeing</p>
+                    </a>
+                </li>
+                <li class="tab col s2">
+                    <a href="#"><img src="work/cocktail-50.png" width="25vh">
+                        <p>Nightlife</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="container portfolio">
+        <div class="row">
+            <div class="col s12 m12 l12 portfolio-holder" infinite-scroll="loadMore()" infinite-scroll-distance="3">
+                <div class="col s4 portfolio__card" ng-repeat="nm in names" >
+                    <div class="dud z-depth-2">
+                        <div class="portfolio__head">
+                            <p>{{nm.name}}</p>
+                        </div>
+                        <div class="portfolio__foot">
+                            <img src="icons/calender.ico" class="portfolio__foot__img">
+                            <p class="portfolio__foot__price">${{nm.price}}</p>
+                            <div class="portfolio__foot__slot"><b>Next Available:</b>
+                                <br>date</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Pagination
+        <ul class="pagination">
+            <li class="waves-effect" ng-show="currentPage" ng-click="currentPage = currentPage -1"><i class="mdi-navigation-chevron-left"></i></li>
+            <li class="waves-effect"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect" ng-disabled="currentPage >= names.length/pageSize - 1" ng-click="currentPage = currentPage + 1"><i class="mdi-navigation-chevron-right"></i></li>
+        </ul>-->
+        <!-- All activities button-->
+        <a class="waves-effect waves-light btn-large">See all the Best Activities in Bangkok</a>
     </div>
-    <a class="waves-effect waves-light btn-large">See all the Best Activities in Bangkok</a>
-</div>
-<footer class="page-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
+    <footer class="page-footer hide-on-small-only">
         <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
+            <div class="row">
+                <div class="col l12 s12">
+                    <p>Travel stories, ideas or &lt;optimism&gt; <a href="https://angel.co/ithaka-experience-it-all">investment offers</a> &lt;/optimism&gt; , we want to hear from you! Shout <span>hello@getithaka.com</span></p>
+                    <p>Are you an utterly kickass<i> Django or AngularJS developer</i> ? Your next adventure could be <span>careers@getithaka.com</span></p>
+                    <p class="heart">
+                        Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Bangalore
+                    </p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2015 Traveljunkie Solutions Pvt. Ltd.
+                </div>
+            </div>
+    </footer>
     </div>
-</footer>

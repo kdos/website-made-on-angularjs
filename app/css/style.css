@@ -7,8 +7,47 @@ body {
     text-align: center;
     font-size: 1em;
     background-color: #DEDEDE;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
 }
 
+@keyframes loading_complete {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* ---------------------------------------------- /*
+ * Preloader
+/* ---------------------------------------------- */
+
+#preloader {
+    background: #FFF;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+}
+
+#status {
+    background-image: url(../preload/plane_animation2.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 500px;
+    left: 36%;
+    margin: -100px 0 0 -100px;
+    position: absolute;
+    top: 50%;
+    
+}
 .side-nav li {
     text-align: left;
 }
@@ -38,17 +77,38 @@ body {
     top: -37px;
 }
 
+.tabs .indicator {
+    height: 5px;
+    background-color: #F05E71;
+}
+
 .nav-wrapper {
     background-color: white;
 }
-
+nav {
+    color: grey;
+}
 nav a {
-    color: #58D6D5 !important;
+    color: grey !important;
+}
+
+.brand-logo {
+    left: 44%;
+    top: -9%;
 }
 
 .section__page1 {
-    background-image: url('../work/bg_1.jpg');
-    background-repeat: no-repeat;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.1) 59%, rgba(0, 0, 0, 0) 100%), url('../work/bg_1.jpg') no-repeat;
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.1) 59%, rgba(0, 0, 0, 0) 100%), url('../work/bg_1.jpg') no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.1) 59%, rgba(0, 0, 0, 0) 100%), url('../work/bg_1.jpg') no-repeat;
+}
+
+.section .row > h1 {
+    font-size: 6em;
+}
+
+.section .row > p {
+    font-size: 1.5em;
 }
 
 .section__page2 {
@@ -59,9 +119,10 @@ nav a {
 
 .portfolio {
     background-color: #DEDEDE;
-    padding: 3vw 50px;
+    padding: 7vw 50px;
     width: 100%;
 }
+
 .portfolio .col {
     margin-bottom: 24px;
 }
@@ -82,61 +143,62 @@ nav a {
     clear: both;
     text-align: center;
 }
-.portfolio__head{
+
+.portfolio__head {
     font-size: 1.5em;
     top: -30px;
     padding-top: 0px;
     width: inherit;
     text-align: left;
 }
-.portfolio__foot{
+
+.portfolio__foot {
     position: absolute;
     bottom: 3px;
     left: 0px;
-    background-image: 
-    -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.82));
-    linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.82));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.82));
+    linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.82));
     width: inherit;
     padding: 18px;
     padding-bottom: 0px;
 }
-.portfolio__foot__price{
+
+.portfolio__foot__price {
     float: left;
     font-size: 1.8em;
 }
-.portfolio__foot__slot{
+
+.portfolio__foot__slot {
     float: right;
     font-size: 1em;
 }
-.dud{
+
+.dud {
     background-image: url('../work/bg_4.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     padding-left: 10px;
     padding-right: 100px;
     position: relative;
+    border-radius: 7px;
 }
+
 @media (min-width: 1191px) {
-    .nav-wrapper {
-        background-color: #E62163;
-    }
-    .section{
+    .section {
         height: 80vh;
     }
     .section__page1 {
         background-size: 100vw;
         background-position: bottom;
     }
-    .tabs{
+    .tabs {
         top: 4.5vw;
         width: 100vw !important;
         height: 11vh;
+        padding-top: .5vw;
     }
-    .tabs .tab{
+    .tabs .tab {
         font-size: .9em;
-    }
-    .portfolio{
-        padding-left: 8em;
     }
     .dud {
         padding: -5px 3px;
@@ -145,53 +207,50 @@ nav a {
         display: inline-block;
         float: left;
     }
-    .portfolio__head{
-        width: inherit; 
+    .portfolio__head {
+        width: inherit;
         position: absolute;
         padding-top: 10px;
         font-size: 1.8em;
     }
-    .portfolio__foot{
+    .portfolio__foot {
         width: inherit;
-
     }
-    .portfolio__foot__price{
+    .portfolio__foot__price {
         font-size: 2em;
         position: absolute;
         bottom: -25px;
         color: orange;
     }
-    .portfolio__foot__slot{
+    .portfolio__foot__slot {
         font-size: 1em;
         position: absolute;
         right: 8px;
         bottom: 8px;
         text-align: left;
     }
-    .portfolio__foot__img{
+    .portfolio__foot__img {
         width: 2em;
         position: absolute;
-        right: 120px; 
+        right: 120px;
         bottom: 15px;
     }
 }
+
 @media (min-width: 990px) and (max-width: 1190px) {
-    .nav-wrapper {
-        background-color: #E62163;
-    }
-    .section{
+    .section {
         height: 80vh;
     }
     .section__page1 {
         background-size: 100vw;
         background-position: bottom;
     }
-    .tabs{
+    .tabs {
         top: 8.7vw;
         width: 100vw !important;
         height: 12vh;
     }
-    .tabs .tab{
+    .tabs .tab {
         font-size: .9em;
     }
     .dud {
@@ -201,57 +260,61 @@ nav a {
         display: inline-block;
         float: left;
     }
-    .portfolio__card{
+    .portfolio {
+        padding-left: 10vw;
+        padding-top: 12vw;
+    }
+    .portfolio__card {
         width: 40vw !important;
     }
-     .portfolio__head{
-        width: inherit; 
+    .portfolio__head {
+        width: inherit;
         position: absolute;
         padding-top: 10px;
         font-size: 1.8em;
     }
-    .portfolio__foot{
+    .portfolio__foot {
         width: inherit;
     }
-    .portfolio__foot__price{
+    .portfolio__foot__price {
         font-size: 2em;
         position: absolute;
         bottom: -25px;
         color: orange;
     }
-    .portfolio__foot__slot{
+    .portfolio__foot__slot {
         font-size: 1em;
         position: absolute;
         right: 8px;
         bottom: 8px;
         text-align: left;
     }
-    .portfolio__foot__img{
+    .portfolio__foot__img {
         width: 2em;
         position: absolute;
-        right: 120px; 
+        right: 120px;
         bottom: 15px;
     }
 }
 /* Portrait tablet to landscape and desktop */
 
 @media (min-width: 768px) and (max-width: 989px) {
-    .section{
+    .section {
         height: 60vh;
     }
     .section__page1 {
         background-size: 100vw;
         background-position: bottom;
     }
-    .tabs{
-        top: 1.5vw;
+    .tabs {
+        top: -.5vw;
         height: 10.2vh;
     }
-    .tabs .tab{
-        font-size: 1em;
+    .tabs .tab {
+        font-size: .8em;
     }
-    .portfolio{
-        padding: 5vw 50px;
+    .portfolio {
+        padding: 5vw 9vw;
     }
     .dud {
         padding: 6px 3px;
@@ -261,36 +324,35 @@ nav a {
         float: left;
         background-size: 50vw;
     }
-    .portfolio__card{
+    .portfolio__card {
         width: 40vw !important;
     }
-     .portfolio__head{
-        width: inherit; 
+    .portfolio__head {
+        width: inherit;
         position: absolute;
         padding-top: 10px;
         font-size: 1.8em;
     }
-    .portfolio__foot{
+    .portfolio__foot {
         width: inherit;
-
     }
-    .portfolio__foot__price{
+    .portfolio__foot__price {
         font-size: 2em;
         position: absolute;
         bottom: -25px;
         color: orange;
     }
-    .portfolio__foot__slot{
+    .portfolio__foot__slot {
         font-size: 1em;
         position: absolute;
         right: 8px;
         bottom: 8px;
         text-align: left;
     }
-    .portfolio__foot__img{
+    .portfolio__foot__img {
         width: 2em;
         position: absolute;
-        right: 120px; 
+        right: 120px;
         bottom: 15px;
     }
 }
@@ -304,12 +366,15 @@ nav a {
         background-size: 100vw;
     }
     .tabs {
-        top: 35px;
+        top: 3.5vw;
         height: 8vh;
     }
-    .container .row{
+    .container .row {
         padding-top: 5vw;
         padding-left: 0px;
+    }
+    .section .row > h1 {
+        font-size: 5em;
     }
     .dud {
         padding: 3vw 3px;
@@ -318,45 +383,46 @@ nav a {
         display: inline-block;
         float: left;
     }
-    .portfolio__card{
+    .portfolio {
+        padding-left: 7vw;
+    }
+    .portfolio__card {
         width: 45vw !important;
     }
-    .portfolio__head{
-        width: inherit; 
+    .portfolio__head {
+        width: inherit;
         position: absolute;
         padding-top: 8px;
         font-size: 1.8em;
     }
-    .portfolio__foot{
+    .portfolio__foot {
         width: inherit;
     }
-    .portfolio__foot__price{
+    .portfolio__foot__price {
         font-size: 2em;
         position: absolute;
         bottom: -25px;
         color: orange;
     }
-    .portfolio__foot__slot{
+    .portfolio__foot__slot {
         font-size: 1.1em;
         position: absolute;
         right: 8px;
         bottom: 8px;
         text-align: left;
     }
-    .portfolio__foot__img{
+    .portfolio__foot__img {
         width: 2em;
         position: absolute;
-        right: 120px; 
+        right: 120px;
         bottom: 15px;
     }
-
-
 }
 /* Landscape phones and down */
 
 @media screen and (max-width: 480px) {
     .section {
-        height: 50vh;
+        height: 60vh;
     }
     .section__page1 {
         background-size: 100vw;
@@ -364,42 +430,45 @@ nav a {
     .tabs {
         top: 2vw;
     }
+    .section .row > h1 {
+        font-size: 5em;
+    }
     .dud {
         padding: 6px 3px;
-        width: 80vw;    
+        width: 80vw;
         height: 45vw;
         display: inline-block;
         float: left;
         background-size: 85vw;
     }
-    .portfolio__card{
+    .portfolio__card {
         width: 45vw !important;
     }
-    .portfolio__head{
+    .portfolio__head {
         width: inherit;
         position: absolute;
-        padding-top: 5px; 
-        font-size: 1.8em;   
+        padding-top: 5px;
+        font-size: 1.8em;
     }
-    .portfolio__foot{
+    .portfolio__foot {
         width: inherit;
     }
-    .portfolio__foot__price{
+    .portfolio__foot__price {
         font-size: 2em;
         position: absolute;
         bottom: -25px;
         color: orange;
     }
-    .portfolio__foot__slot{
+    .portfolio__foot__slot {
         font-size: 1em;
         position: absolute;
         right: 8px;
         bottom: 8px;
     }
-    .portfolio__foot__img{
+    .portfolio__foot__img {
         width: 2em;
         position: absolute;
         right: 110px;
-        bottom: 15px; 
+        bottom: 15px;
     }
 }
