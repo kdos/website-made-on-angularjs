@@ -9,33 +9,58 @@ angular.module('myApp.view2', ['ngRoute', 'infinite-scroll'])
     });
 }])
 
-.controller('View2Ctrl', ['$scope', '$http', function($scope, $http) {
+.filter('startFrom', function() {
+        return function(input, start) {
+            if (!input || !input.length) {
+                return;
+            }
+            return input.slice(start);
+        };
+    })
+    .controller('View2Ctrl', ['$scope', '$http', '$filter', function($scope, $http, $filter) {
         $scope.isLoading = true; //condition for preloader
+        $scope.start = 0;
+        $scope.stop = false;
+        $scope.limit = 3;       //Number of activities at a time
+        $scope.count = 0;       // Total number of activities
+        $scope.names = "";
         $http({
                 method: 'GET',
                 url: 'http://104.236.150.55/api/activity/list/?format=json'
             })
             .success(function(response) {
-                $scope.names = response.results;
+                $scope.fullResult = response.results;
+                $scope.count = response.count;
+                $scope.names = $filter('limitTo')($scope.fullResult, $scope.limit);
+                $scope.start += $scope.limit;
                 $scope.isLoading = false;
             })
             .error(function(data, status) {
                 $scope.names = status;
                 $scope.isLoading = true;
             });
+
+
         $scope.loadMore = function() {
-                var last = $scope.names[$scope.names.length - 1];
-                for (var i = 1; i <= 8; i++) {
-                    $scope.names.push(last + i);
-                }
-            }
-            /*
-            $scope.currentPage = 0;
-            $scope.pageSize = 3;
-            $scope.numberOfPages = function(){
-                return Math.ceil($scope.names.length/$scope.pageSize);
-            }*/
-            /* settings for 'materialize' objects*/
+            $http({
+                    method: 'GET',
+                    url: 'http://104.236.150.55/api/activity/list/?format=json'
+                })
+                .success(function(response) {
+                    if ($scope.count > $scope.start) $scope.stop = true;
+                    for (var i = 0; i < $scope.limit; i++) {
+                        $scope.temp = $filter('startFrom')(response.results, $scope.start);
+                        $scope.temp = $filter('limitTo')($scope.temp, 1);
+                        $scope.start += 1;
+
+                        $scope.names.push($scope.temp[0]);
+                    };
+
+                })
+                .error(function(data, status) {
+                    $scope.names = status;
+                });
+        }
         $(".button-collapse").sideNav({
             menuWidth: 400, // Default is 240
             edge: 'right', // Choose the horizontal origin
@@ -45,12 +70,5 @@ angular.module('myApp.view2', ['ngRoute', 'infinite-scroll'])
         $('ul.tabs').tabs();
 
     }])
-    /*
-    .filter('startFrom',[function(){
-        return function(input, start) {
-            start = +start; //parse to int
-            return input.slice(start);
-        }
-    }])
-    */
+
 ;

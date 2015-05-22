@@ -1,10 +1,11 @@
 <!-- Loading animation-->
 <div id="preloader" ng-show="isLoading">
+
     <div id="status">
+        
     </div>
 </div>
 <!-- Main page-->
-<div class="content_site">
     <!--header-->
     <nav>
         <div class="nav-wrapper">
@@ -67,7 +68,7 @@
     </section>
     <div class="container portfolio">
         <div class="row">
-            <div class="col s12 m12 l12 portfolio-holder" infinite-scroll="loadMore()" infinite-scroll-distance="3">
+            <div class="col s12 m12 l12 portfolio-holder" infinite-scroll="loadMore()" infinite-scroll-distance="1" infinite-scroll-disabled="stop">
                 <div class="col s4 portfolio__card" ng-repeat="nm in names" >
                     <div class="dud z-depth-2">
                         <div class="portfolio__head">
@@ -113,4 +114,4 @@
                 </div>
             </div>
     </footer>
-    </div>
+
