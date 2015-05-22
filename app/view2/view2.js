@@ -3,10 +3,14 @@
 angular.module('myApp.view2', ['ngRoute', 'infinite-scroll'])
 
 .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/view2', {
-        templateUrl: 'view2/view2.html',
-        controller: 'View2Ctrl'
-    });
+    $routeProvider
+
+        //for Landing page
+        .when('/view2', {
+            templateUrl: 'view2/view2.html',
+            controller: 'View2Ctrl'
+        })
+        ;
 }])
 
 .filter('startFrom', function() {
@@ -62,8 +66,8 @@ angular.module('myApp.view2', ['ngRoute', 'infinite-scroll'])
                 });
         }
         $(".button-collapse").sideNav({
-            menuWidth: 400, // Default is 240
-            edge: 'right', // Choose the horizontal origin
+            menuWidth: 200, // Default is 240
+            edge: 'left', // Choose the horizontal origin
             closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
         });
         $('.materialboxed').materialbox();
