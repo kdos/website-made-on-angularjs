@@ -8,7 +8,7 @@
 <!-- Main page-->
     <!--header-->
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper nav__wrapper">
             <ul id="slide-out" class="side-nav">
                 <li><a href="#!">First Sidebar Link</a></li>
                 <li><a href="#!">Second Sidebar Link</a></li>
@@ -70,7 +70,7 @@
         <div class="row">
             <div class="col s12 m12 l12 portfolio-holder" infinite-scroll="loadMore()" infinite-scroll-distance="1" infinite-scroll-disabled="stop">
                 <div class="col s4 portfolio__card" ng-repeat="nm in names" >
-                    <div class="dud z-depth-2">
+                    <div class="dud z-depth-2" ng-click="go('/activity', nm.name)">
                         <div class="portfolio__head">
                             <p>{{nm.name}}</p>
                         </div>

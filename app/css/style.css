@@ -11,17 +11,12 @@ body {
     font-smoothing: antialiased;
 }
 
-@keyframes loading_complete {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: .5;
-    }
-    100% {
-        opacity: 0;
-    }
-}
+/***************************************************
+****************************************************
+             MAIN PAGE
+****************************************************
+****************************************************/
+
 /* ---------------------------------------------- /*
  * Preloader
 /* ---------------------------------------------- */
@@ -82,7 +77,7 @@ body {
     background-color: #F05E71;
 }
 
-.nav-wrapper {
+.nav__wrapper{
     background-color: white;
 }
 nav {
@@ -472,3 +467,196 @@ nav a {
         bottom: 15px;
     }
 }
+
+/********************************
+*********************************
+        Activity Page
+*********************************
+*********************************/
+.navBar {
+    position: absolute;
+    background-color: transparent !important;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 59%, rgba(0, 0, 0, .5) 100%);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 59%, rgba(0, 0, 0, .5) 100%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 59%, rgba(0, 0, 0, .5) 100%);
+}
+
+.nav__list {
+    padding-right: 5vw;
+}
+
+.intro {
+    text-align: center;
+    padding-top: 13%;
+    padding-bottom: 13%;
+    background-image: url('../work/bg_5.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vw;
+}
+
+.heading {
+    padding: 2px 3vw;
+}
+
+.heading__p {
+    color: grey;
+}
+
+.heading__list {
+    margin-left: 20px;
+    list-style-position: outside;
+    list-style-type: disc !important;
+    color: #F05F71;
+}
+
+.heading__list span {
+    color: grey;
+}
+
+.heading__button {
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+    left: -10px;
+    bottom: 2px;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+
+.overView {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.overView__list {
+    font-size: 2vw;
+}
+
+.overView__badges {
+    padding-bottom: 20px;
+}
+
+.overView__badge {
+    width: 15vw !important;
+    font-size: 1em;
+    padding: 4px 3vw;
+    text-align: center;
+    display: inline;
+    height: 4em;
+    left: 0px;
+    border: 2px solid green;
+    border-radius: 2px;
+}
+
+.overView__badge__not {
+    width: 15vw !important;
+    font-size: 1em;
+    padding: 4px 3vw;
+    text-align: center;
+    display: inline;
+    height: 4em;
+    left: 0px;
+    border: 2px solid red;
+    border-radius: 2px;
+}
+
+@media screen and (min-width: 993px) {
+    .intro {
+        height: 40vh;
+    }
+    .heading {
+        padding-left: 5vw;
+        padding-right: 8vw;
+    }
+    .heading__h {
+        font-size: 4vw !important;
+    }
+    .heading__p {
+        font-size: 1.5vw;
+        color: #858585;
+    }
+    .overView {
+        padding: 2vw 5vw;
+        padding-bottom: 0px;
+    }
+    .overView__h {
+        font-size: 3vw;
+    }
+    .overView__p {
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 722px) {
+    .intro {
+        height: 40vh;
+    }
+    .heading {
+        padding-left: 5vw;
+        padding-right: 8vw;
+    }
+    .heading__h {
+        font-size: 5vw !important;
+    }
+    .heading__p {
+        font-size: 1.5vw;
+        color: #858585;
+    }
+    .overView {
+        padding: 2vw 5vw;
+        padding-bottom: 0px;
+    }
+    .overView__h {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 721px) and (min-width: 481px) {
+    .intro {
+        height: 50vw;
+    }
+    .heading {
+        height: 40vh;
+    }
+    .heading__h {
+        font-size: 7vw !important;
+    }
+    .heading__p {
+        font-size: 3vw;
+        color: #858585;
+    }
+    .overView {
+        padding: 2vw 3vw;
+        padding-bottom: 0px;
+    }
+    .overView__h {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .intro {
+        height: 65vw;
+    }
+    .heading {
+        height: 82vw;
+    }
+    .heading__h {
+        font-size: 8vw !important;
+    }
+    .heading__p {
+        font-size: 3.5vw;
+        color: #858585;
+    }
+    .overView {
+        padding: 2vw 3vw;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .overView__h {
+        font-size: 7vw;
+    }
+}
+
