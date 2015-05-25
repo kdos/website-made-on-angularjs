@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <h1>Travel</h1>
+    </div>
+    <div class="row" style="height:10vw;">
+        <div class="social-buttons"><a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a><a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a><a href="#" class="social-button google"><i class="fa fa-google"></i></a>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header" style="background-color:grey;"><i class="mdi-image-filter-drama"></i>Sign-Up</div>
+                <div class="collapsible-body">
+                    <form method="post" ng-submit="signup()">
+                        <!-- NAME -->
+                        <div id="name-group" class="form-group">
+                            <label>Name</label>
+                            <input type="email" name="email" class="form-control" placeholder="email" ng-model="email">
+                            <span class="help-block"></span>
+                        </div>
+                        <!-- SUPERHERO NAME -->
+                        <div id="superhero-group" class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="password" ng-model="password">
+                            <span class="help-block"></span>
+                        </div>
+                        <!-- SUBMIT BUTTON -->
+                        <button type="submit" class="btn btn-success btn-lg btn-block">
+                            <span class="glyphicon glyphicon-flash"></span> Submit!
+                        </button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- SHOW DATA FROM INPUTS AS THEY ARE BEING TYPED -->
+</div>
