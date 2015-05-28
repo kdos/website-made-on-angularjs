@@ -6,7 +6,4 @@ First
 then to run the application
 #npm start
 
-to run unit tests in karma
-#npm test
-
-Should run the application while testing in another tab
+to run 

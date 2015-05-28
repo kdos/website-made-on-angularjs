@@ -1,42 +1,44 @@
- <nav class="navBar">
-        <div class="nav-wrapper">
-            <ul class="left">
-                <li ng-click="go('/view2')"><img src="leftArrow.ico" width="60vw" align="center"></li>
-            </ul>
-            <ul id="nav-mobile" class="right">
-                <li class=" nav__list"><img src="share.ico" width="30vw"></li>
-                <li class=" nav__list"><img src="heart.ico" width="30vw"></li>
-            </ul>
-        </div>
-    </nav>
-    <div style="background-color:white;text-align: left;color:black">
+<nav class="navBar">
+    <div class="nav-wrapper">
+        <ul class="left">
+            <li ng-click="go('/view2')"><img src="leftArrow.ico" width="60vw" align="center"></li>
+        </ul>
+        <ul id="nav-mobile" class="right">
+            <li class=" nav__list"><img src="share.ico" width="30vw"></li>
+        </ul>
+    </div>
+</nav>
+<div style="background-color:white;text-align: left;color:black">
     <div class="intro lighten-2 z-depth-1">
+    <img src="icons/jump_active.ico" class="intro__icon">
     </div>
     <div class="heading">
         <h2 class="heading__h"> {{nm.name}}</h2>
         <div class="row">
             <div class="col s3">
-                <p class="heading__p"><img src="work/marker-5.png" width="15">&nbsp&nbsp&nbsp  {{nm.location}}</p>
+                <p class="heading__p"><img src="work/marker-5.png" width="15">&nbsp&nbsp&nbsp {{nm.location}}</p>
             </div>
             <div class="col s3">
-                <p class="heading__p"><img src="clock.ico" width="15">&nbsp&nbsp&nbsp   6 Hours</p>
+                <p class="heading__p"><img src="clock.ico" width="15">&nbsp&nbsp&nbsp 6 Hours</p>
             </div>
+            <h3 class="heading__price">${{nm.price}}</h3>
         </div>
-        <h2 style="color:green">${{nm.price}}</h2>
-        <hr>
         <div class="row">
-            <div class="col s4">
-                <p class="heading__p"><img src="calender.ico" width="15">Next Available</p>
+            <div class="col">
+                <p class="heading__p"><img src="calender.ico" width="15">Next Available: 8AM, Tomorrow</p>
             </div>
             <div class="col offset-s4">
-                <p class="heading__p"><a href="#"></a></p>
+                <p class="heading__p">
+                    <a href="#"></a>
+                </p>
             </div>
         </div>
+                <hr>
         <a class="waves-effect waves-light btn-large heading__button">Book</a>
     </div>
     <div class="overView">
-        <h2 class="overView__h">Overview & Highlights</h2>
-        <p class="heading__p">{{nm.description}}
+        <h2 class="overView__h">The experience</h2>
+        <p class="heading__p">
         </p>
         <ul>
             <li class="heading__list"><span>Scuba Dive at night in the beautiful Pattaya waters</span></li>
@@ -45,27 +47,23 @@
         </ul>
     </div>
     <div class="overView">
-        <h2 class="overView__h">Inclusions</h2>
-        <div class="overView__badges">
-            <span class="overView__badge">Hotel pickup</span>
-            <span class="overView__badge">All driving equip</span>
-            <span class="overView__badge">Professional help</span>
-        </div>
-        <div class="overView__badges">
-            <span class="overView__badge">Travel</span>
-            <span class="overView__badge">With support staff</span>
+        <h2 class="overView__h">What's Included</h2>
+        <div class="overView__badges row">
+            <span class="col s4 overView__badge">Hotel pickup</span>
+            <span class="col s4 overView__badge">All driving equip</span>
+            <span class="col s4 overView__badge">Professional help</span>
+            <span class="col s3 overView__badge">Travel</span>
+            <span class="col s3 overView__badge">With support staff</span>
         </div>
     </div>
-     <div class="overView">
-        <h2 class="overView__h">Non-Included</h2>
-        <div class="overView__badges">
-            <span class="overView__badge__not">Hotel pickup</span>
-            <span class="overView__badge__not">All driving equip</span>
-            <span class="overView__badge__not">Professional help</span>
-        </div>
-        <div class="overView__badges">
-            <span class="overView__badge__not">Travel</span>
-            <span class="overView__badge__not">With support staff</span>
+    <div class="overView">
+        <h2 class="overView__h">What's Not Included</h2>
+       <div class="overView__badges row">
+            <span class="col s4 overView__badge__not">Hotel pickup</span>
+            <span class="col s4 overView__badge__not">All driving equip</span>
+            <span class="col s4 overView__badge__not">Professional help</span>
+            <span class="col s3 overView__badge__not">Travel</span>
+            <span class="col s3 overView__badge__not">With support staff</span>
         </div>
     </div>
     <div class="overView">
@@ -75,14 +73,20 @@
             <li class="heading__list"><span>Must know basic swimming</span></li>
         </ul>
     </div>
-    <div class="overView">
-    <div id="map-canvas"></div>
-        
+    <div class="iframe__container">
+        <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAgehexf6pLp1DKEEhOEYYbTAhWbqlTss8&q=At+One+Inn">
+        </iframe>
     </div>
     <div class="overView">
-        <h2 class="overView__h">About the seller</h2>
-        <p class="heading__p">The dive Inn has been a pioneer in scuba diving in Thailand sine 1993 Plunge into the spectacular and clean waters of Pattaya at night in this one-of-a-kind guided night scuba dive.Plunge into the spectacular and clean waters of Pattaya at night in this one-of-a-kind guided night scuba dive.Plunge into the spectacular and clean waters of Pattaya at night in this one-of-a-kind guided night scuba dive.</p>
-        <a href="#">See the Dive Inn</a>
+    <h2 class="overView__h">What you get additionally</h2>
+        <div class="">
+            
+        </div>
+    </div>
+    <div class="overView">
+        <h2 class="overView__h">Experience champion</h2>
+        <p class="heading__p">This activity has been brought to you by <b>The Dive In</b></p>
+        <a href="#">See the Dive Inn's page</a>
     </div>
     <div style="height:15vw"></div>
-    </div>
+</div>
